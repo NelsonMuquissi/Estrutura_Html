@@ -8,10 +8,52 @@
       <title>HTML_CSS_JS</title>
 </head>
 <body>
-      <header>Cabeçalho</header>
-      <nav>Menu</nav>
-      <main>Conteúdo Principal</main>
+      <header>
+            <div class="logo">
+                  <img src="img/logo.png" alt="Logo">
+            </div>
+            <button id="openmenu">&#9776;</button>
+            <nav id="menu">
+                  <button id="closemenu">X</button>
+                  <a href="#">Home</a>
+                  <a href="#">Serviços</a>
+                  <a href="#">Produtos</a>
+                  <a href="#">Contactos</a>
+            </nav>
+      </header>
+
       <aside>Relacionado</aside>
+      <main>Conteúdo Principal</main>
       <footer><p>Nelson Muquissi &copy; 2023-2024</p></footer>
+
+      <script>
+            openmenu.addEventListener('click', () => {
+      menu.style.display = 'flex'
+
+      menu.style.right = (menu.offsetWidth * -1) + 'px'
+
+      openmenu.style.display = 'none'
+
+      setTimeout(() => {
+          menu.style.opacity = '1'
+
+          menu.style.right = '0'
+      }, 10)
+      
+  })
+
+  closemenu.addEventListener('click', () => {
+      menu.style.opacity = '0'
+
+      openmenu.removeAttribute('style')
+
+      menu.style.right = (menu.offsetWidth * -1) + 'px'
+      setTimeout(() => {
+          menu.removeAttribute('style')
+      }, 200)
+      
+      
+  })
+      </script>
 </body>
 </html>

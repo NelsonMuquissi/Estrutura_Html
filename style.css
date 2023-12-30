@@ -1,0 +1,122 @@
+*{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box
+}
+
+body{
+      display: flex;
+      flex-wrap: wrap;
+}
+
+header, nav, main, aside, footer{
+      display: flex;
+      background-color: indigo;
+      color: #fff;
+      margin: 3px;
+}
+a{
+      text-decoration: none;
+}
+
+header{
+      flex: 1 1 100vw;
+      height: 100px;
+      justify-content:space-between;
+      align-items: center;
+} 
+header .logo{
+      margin-left: 70px;
+      transition: 1s ease;
+
+}
+nav{
+      justify-content: end;
+      margin-right: 70px;
+      transition: 1s ease;
+} 
+nav a{
+      color: inherit;
+      margin: 20px;
+}
+main{
+      flex: 20 1 500px;
+      height: calc(100vh - 220px);
+} 
+aside{
+      flex: 1 1 100px;
+} 
+footer{
+      flex: 1 1 100vw;
+      height: 100px;
+      justify-content: center;
+      align-items: center;
+}
+
+#openmenu, #closemenu{
+      border: none;
+      background: none;
+      font-size: 23px;
+      font-weight: bold;
+      padding: 0px 5px 0px 5px;
+      cursor: pointer;
+      display: none;
+  }
+
+
+
+@media only screen and (max-width: 717px){
+      header{
+            order: 1;
+      }
+      header .logo{
+            margin-left: 0;
+            transition: 1s ease;
+      } 
+      nav{
+            margin-right: 0;
+            transition: 1s ease;
+            flex: 1 1 100vw;
+      }
+      main{
+            order: 2;
+            height: calc(100vh - 328px);
+      }
+      aside{
+            order: 3;
+            flex: 1 1 100vw;
+            height: 100px;
+      }
+      footer{
+            order: 4;
+      }
+      #openmenu, #closemenu{
+            display: block;
+        }
+    
+        #openmenu{
+            margin-left: auto;
+            transition: 1s ease;
+        }
+    
+        #closemenu{
+            position: fixed;
+            right: 15px;
+            top: 46px;
+            transition: 1s ease;
+        }
+    
+        nav{
+            position: fixed;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            display: none;
+            opacity: 0;
+            transition: 0.3s;
+        }
+}
